@@ -8,6 +8,8 @@ There are two versions, the one in the screenshot has a few links, time, date an
 
 The second one ("index-ddg.html") features aduckduckgo search "bar"/field and is ment to be hosted because of `autofocus` which doesn't work on local files (at least in firefox). Also keep in mind that the search filed is just `8vw` in lenght to keep everything centerd so it can be quite small on smaller displays.
 
+Both have customizable colors with css variables
+
 ### How to set up a local file startpage
 
 **Homepage**
