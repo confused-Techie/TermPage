@@ -6,7 +6,7 @@ Simple terminal themed startpage
 
 There are two versions, the one in the screenshot has a few links, time, date and no other functions. The cursor does blink but it's purely about aesthetics. (This one can be loaded from a local file with the `autoconfig.js` and `firefox.cfg`)
 
-The second one features aduckduckgo search "bar"/field and is ment to be hosted because of `autofocus` which doesn't work on local files (at least in firefox). Also keep in mind that the search filed is just `8vw` in lenght to keep everything centerd so it can be quite small on smaller displays.
+The second one ("index-ddg.html") features aduckduckgo search "bar"/field and is ment to be hosted because of `autofocus` which doesn't work on local files (at least in firefox). Also keep in mind that the search filed is just `8vw` in lenght to keep everything centerd so it can be quite small on smaller displays.
 
 ### How to set up a local file startpage
 
