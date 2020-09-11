@@ -126,99 +126,13 @@
 
     </style>
 
-    <script>
+    
+    <script src="config.js"></script>
+    <script src="main.js"></script>
 
-        // Get current time and format
-        function getTime() {
-            let date = new Date(),
-                min = date.getMinutes(),
-                hour = date.getHours();
-
-                return '' +
-                    (hour < 10 ? ('0' + hour) : hour) + ':' +
-                    (min < 10 ? ('0' + min) : min);
-        }
-
-        //Get current date
-        function getDate() {
-            var dt = new Date();
-
-            //Ensure date comes as 01, 02, etc
-            var DD = ('0' + dt.getDate()).slice(-2);
-            //getMonth returns month from 0
-            var MM = ('0' + (dt.getMonth() + 1)).slice(-2);
-
-            //Final output
-            return '' +
-                (DD + '/' + MM);
-        }
-
-        function enterTrigger() {
-          if (event.keyCode === 13) {
-            //window.alert(document.getElementById("cliInput").value);
-            //13 is enter, and the above is sanity check
-            var data = document.getElementById("cliInput").value;
-            var dataL = data.toLocaleLowerCase();
-            var dataAr = dataL.split(" ");
-
-            if (dataAr[0] == "sudo") {
-              processBash("You are not in the sudoers file. This incident will be reported!");
-
-            }
-            else if (dataAr[0] == "ls") {
-              processBash("This folder is empty.");
-
-            }
-            else if (dataAr[0] == "whoami") {
-
-              processBash(navigator.userAgent);
-            }
-            else if (dataAr[0] == "cd") {
-              window.open('http://google.com/search?q='+data.replace("cd ", ""));
-            }
-            else if (dataAr[0] == "clear") {
-              processBash("");
-            }
-            else if (dataAr[0] == "help") {
-              processBash("cd [search term]");
-              processBash("ls");
-              processBash("cat [filename]");
-            }
-            else if (dataAr[0] == "nano") {
-              if (dataAr[1] == "settings" || dataAr[1] == "setting") {
-                window.open('ms-settings:');
-              }
-              if (dataAr[1] == "steam") {
-                window.open('steam://browsemedia');
-              }
-            }
-            else {
-              processBash(dataAr[0]+": command not found")
-            }
-          }
-
-        }
-
-        function processBash(displayOutput) {
-          //window.alert(displayOutput);
-          document.getElementById("output").innerHTML = displayOutput;
-          document.getElementById("cliInput").value = "";
-        }
-
-        window.onload = () => {
-            // Set up the clock and date
-            document.getElementById('clock').innerHTML = getTime();
-            document.getElementById('date').innerHTML = getDate();
-
-            // Set clock interval to tick clock
-            setInterval( () => {
-                document.getElementById('clock').innerHTML = getTime();
-            },100);
-        }
-
-    </script>
 
     <body>
+
 
         <div id="wrapper">
 
@@ -239,12 +153,12 @@
 
                 <div>
                     <p class="links">
-                    <a href="https://github.com">'GitHub'</a>,<br>
-                    <a href="https://developer.mozilla.org/en-US/">'MDN Web Docs'</a>,<br>
-                    <a href="https://www.youtube.com">'YouTube'</a>,<br>
-                    <a href="https://www.reddit.com">'Reddit'</a>,<br>
-                    <a href="https://store.steampowered.com">'Steam'</a>,<br>
-                    <a href="https://unix.stackexchange.com">'Unix.stx'</a>,
+                    <a href="https://reddit.com">'Reddit'</a>,<br>
+                    <a href="https://youtube.com">'YouTube'</a>,<br>
+                    <a href="https://music.youtube.com">'YouTube Music'</a>,<br>
+                    <a href="http://192.168.0.30:8080">'Heimdall'</a>,<br>
+                    <a href="https://netflix.com">'Netflix'</a>,<br>
+                    <a href="https://mail.google.com">'Gmail'</a>,
                     </p>
                 </div>
 
@@ -254,6 +168,21 @@
                 <div class="cli">
 
                     <p id="output"><span class="user"></span></p>
+                </div>
+                <div class="cli">
+                  <p id="output2"><span class="user"></span></p>
+                </div>
+                <div class="cli">
+                  <p id="output3"><span class="user"></span></p>
+                </div>
+                <div class="cli">
+                  <p id="output4"><span class="user"></span></p>
+                </div>
+                <div class="cli">
+                  <p id="output5"><span class="user"></span></p>
+                </div>
+                <div class="cli">
+                  <p id="output6"><span class="user"></span></p>
                 </div>
 
             </div>
