@@ -58,7 +58,7 @@ function getTime() {
               }
             }
             else if (dataAr[0] == "test") {
-              //window.alert("Kill me");
+
               processBash(test, "", "", "", "", "");
             }
             else if (dataAr[0] == "whoami") {
