@@ -35,8 +35,80 @@ function getTime() {
 
             }
             else if (dataAr[0] == "ls") {
-              
-              processBash("stream :: Streaming Sites", "dev :: Developer Sites","web :: Web Managment","","","");
+              //create ShortCut List Entries w/ optional description
+              try {
+                if (scListD[0] != null && scList[0] != null) {
+                  var lsEntry1 = scList[0]+" :: "+scListD[0];
+                } else if (scList[0] != null) {
+                  var lsEntry1 = scList[0];
+                } else {
+                  var lsEntry1 = "";
+                }
+              } catch(err) {
+                var lsEntry1 = "";
+              }
+
+              try {
+                if (scListD[1] != null && scList[1] != null) {
+                  var lsEntry2 = scList[1]+" :: "+scListD[1];
+                } else if (scList[1] != null) {
+                  var lsEntry2 = scList[1];
+                } else {
+                  var lsEntry2 = "";
+                }
+              } catch(err) {
+                var lsEntry2 = "";
+              }
+
+              try {
+                if (scListD[2] != null && scList[2] != null) {
+                  var lsEntry3 = scList[2]+" :: "+scListD[2];
+                } else if (scList[2] != null) {
+                  var lsEntry3 = scList[2];
+                } else {
+                  var lsEntry3 = "";
+                }
+              } catch(err) {
+                var lsEntry3 = "";
+              }
+
+              try {
+                if (scListD[3] != null && scList[3] != null) {
+                  var lsEntry4 = scList[3]+" :: "+scListD[3];
+                } else if (scList[3] != null) {
+                  var lsEntry4 = scList[3];
+                } else {
+                  var lsEntry4 = "";
+                }
+              } catch(err) {
+                var lsEntry4 = "";
+              }
+
+              try {
+                if (scListD[4] != null && scList[4] != null) {
+                  var lsEntry5 = scList[4]+" :: "+scListD[4];
+                } else if (scList[4] != null) {
+                  var lsEntry5 = scList[4];
+                } else {
+                  var lsEntry5 = "";
+                }
+              } catch(err) {
+                var lsEntry5 = "";
+              }
+
+              try {
+                if (scListD[5] != null && scList[5] != null) {
+                  var lsEntry6 = scList[5]+" :: "+scListD[5];
+                } else if (scList[5] != null) {
+                  var lsEntry6 = scList[5];
+                } else {
+                  var lsEntry6 = "";
+                }
+              } catch(err) {
+                var lsEntry6 = "";
+              }
+
+              processBash(lsEntry1, lsEntry2, lsEntry3, lsEntry4, lsEntry5, lsEntry6);
 
             }
             else if (dataAr[0] == "cat") {
@@ -67,10 +139,6 @@ function getTime() {
                   processBash(entry1, entry2, entry3, entry4, entry5, entry6);
                 }
               }
-            }
-            else if (dataAr[0] == "test") {
-
-              processBash(test, "", "", "", "", "");
             }
             else if (dataAr[0] == "whoami") {
 
@@ -127,7 +195,7 @@ function getTime() {
             document.getElementById("output6").innerHTML = dOut6;
 
         }
-//<a href='example.com'>'example'</a>
+
         function linkMaker(nameC, linkC) {
           if (nameC != null && linkC != null) {
             return "<a href="+linkC+">"+nameC+"</a>";
@@ -138,10 +206,27 @@ function getTime() {
 
 
 
+
         window.onload = () => {
             // Set up the clock and date
             document.getElementById('clock').innerHTML = getTime();
             document.getElementById('date').innerHTML = getDate();
+
+            //assign proper username and hostname to each part of the page
+            document.getElementById('userName').innerHTML = userNameV;
+            document.getElementById('userName2').innerHTML = userNameV;
+            document.getElementById('userName3').innerHTML = userNameV;
+            document.getElementById('hostName').innerHTML = hostNameV;
+            document.getElementById('hostName2').innerHTML = hostNameV;
+            document.getElementById('hostName3').innerHTML = hostNameV;
+
+            //assiign favourites
+            document.getElementById('fav1').innerHTML = linkMaker(favourites[0][0], favourites[0][1]);
+            document.getElementById('fav2').innerHTML = linkMaker(favourites[1][0], favourites[1][1]);
+            document.getElementById('fav3').innerHTML = linkMaker(favourites[2][0], favourites[2][1]);
+            document.getElementById('fav4').innerHTML = linkMaker(favourites[3][0], favourites[3][1]);
+            document.getElementById('fav5').innerHTML = linkMaker(favourites[4][0], favourites[4][1]);
+            document.getElementById('fav6').innerHTML = linkMaker(favourites[5][0], favourites[5][1]);
 
             // Set clock interval to tick clock
             setInterval( () => {
