@@ -1,36 +1,44 @@
 # TermPage
 
-Simple terminal themed startpage
+A Terminal themed Startpage.
 
-![Screenshot](screenshot.png?raw=true "Screenshot")
+![Screenshot](home.PNG?raw=true "Screenshot")
 
-There are two versions, the one in the screenshot has a few links, time, date and no other functions. The cursor does blink but it's purely about aesthetics. (This one can be loaded from a local file with the `autoconfig.js` and `firefox.cfg`)
+The Startpage will always show the date and time at the top, as well as a list of favourite links.
 
-The second one ("index-ddg.html") features aduckduckgo search "bar"/field and is ment to be hosted because of `autofocus` which doesn't work on local files (at least in firefox). Also keep in mind that the search filed is just `8vw` in lenght to keep everything centerd so it can be quite small on smaller displays.
-
-Both have customizable colors with css variables
+But from there, you have a sudo-terminal that allows some basic commands, bringing the ability to search the web, show other lists of ShortCuts, and a few other actions.
+All available commands are listed here.
+If you would like to see a short video showing the use click <a href="https://www.youtube.com/embed/DjoGSAESUW0">here</a>.
 
 ### How to set up a local file startpage
 
 **Homepage**
 
-Go to `about:preferences#home` and set "Homepage and new windows" to "Custom URLs..."
+Go into your preffered web browser and access the settings to change the homepage to a custom URL.
 
 Then add your file like this: `file:///path/to/index.html`
+Or if you'd like, you can click on index.html after downloading and copy the link that shows at the top of your browser. And use that, rather than type it in manually.
 
-NOTE: There has to be 3 `/` after `file:` so the full path on Linux would look something like this:
+### Change the Favourites List
+To change your list of favourites that show up, go ahead and open the `config.js` in your preffered text editor (like Atom or Notepad).
+Then find the variable named `favourites` and modify it as needed. 
+Keep in mind you need to keep the format the same as it is currently, like so: <br>
+`var favourites = [ ["Name of Favourite", "https://Link-to-Favourite"], ["Name of Second Favourite", "https://Link-to-2nd-Favourite"], ....(And so on)` <br>
+Currently the list of favourites is locked at 6 items,but that should change soon.
 
-`file:////home/user/.config/startpage/index.html`
+### Custom ShortCut Lists
+To create a custom ShortCut List you need a minimum of three things.
+1. Name of the ShortCut List
+2. Name for the Links
+3. Web Address Link
 
-**New tab page**
+To create a brand new ShortCut List again open `config.js` and find the variable `scList`, within `scList` add the name of your new ShortCut List.<br>
+`var scList = ["new-shortcut-list"];`<br>
+If you would like you can also add a description for the list in `scListD`, but that is optional.
 
-We need the `autoconfig.js` and `firefox.cfg` for this. First open `firefox.cfg` and edit line 7 to have a correct path to `index.html`
-
-After this copy the `autoconfig.js` to `defaults/preferences/` in Firefoxes installation folder (full path in Linux `/usr/lib/firefox/browser/defaults/preferences/autoconfig.js`).
-
-And copy the `firefox.cfg` to the base installation folder (full path in Linux `/usr/lib/firefox/firefox.cfg/`).
-
-Restart Firefox.
-
-
-NOTE: The `userChrome.css` in the screenshot isn't finished yet, I will update this with a link once it is.
+Then to add the ShortCut list itself find the variable `shortcut` in `config.js` and modify it like so:<br>
+`const shortcut = {
+  "new-shortcut-list" : [ ["Name of Link", "https://address-of-link"], ["Name of Link2", "https://address-of-link2"], .....(And so on)`<br>
+  
+Some things to keep in mind, the name of the list in `scList` and in `shortcut` have to match exactly, and will be what you have to type with `cat` to view the list.
+As well as currently these list only support six entries, but again hopefully that will change soon.
