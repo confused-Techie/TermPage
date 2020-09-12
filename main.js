@@ -35,26 +35,37 @@ function getTime() {
 
             }
             else if (dataAr[0] == "ls") {
+              
               processBash("stream :: Streaming Sites", "dev :: Developer Sites","web :: Web Managment","","","");
 
             }
             else if (dataAr[0] == "cat") {
-              if (dataAr[1] == "stream") {
-                //<a href='example.com'>'example'</a>   Use this to format the links
-                processBash("<a href='https://www.hulu.com/hub/home'>'Hulu'</a>",
-                  "<a href='https://www.crunchyroll.com/'>'Crunchyroll'</a>",
-                  "<a href='https://www.disneyplus.com/'>'Disney+'</a>",
-                  "<a href='https://www.netflix.com/'>'Netflix'</a>", "", "");
-              }
-              if (dataAr[1] == "dev") {
-                processBash("<a href='https://github.com/'>'GitHub'</a> ",
-                  "<a href='https://partner.microsoft.com/en-us/dashboard'>'Microsoft Partner Center'</a>",
-                  "<a href='https://developers.meethue.com/'>'Philips Hue Developer'</a> ", "", "", "");
-              }
-              if (dataAr[1] == "web") {
-                processBash("<a href='https://dash.cloudflare.com/'>'Cloudflare'</a> ",
-                  "<a href='https://domains.google.com/'>'Google Domains'</a>",
-                  "<a href='https://search.google.com/search-console?'>'Google Search Console'</a>", "", "", "");
+              for (var i = 0; i < scList.length; i++) {
+                if (dataAr[1] == scList[i]) {
+                  var shortList = dataAr[1]+"_sc";
+
+                  //create link entries
+                  try {
+                    var entry1 = linkMaker(shortcut[shortList][0][0], shortcut[shortList][0][1]);
+                  } catch(err) { var entry1 = ""; }
+                  try {
+                    var entry2 = linkMaker(shortcut[shortList][1][0], shortcut[shortList][1][1]);
+                  } catch(err) { var entry2 = "";}
+                  try {
+                    var entry3 = linkMaker(shortcut[shortList][2][0], shortcut[shortList][2][1]);
+                  } catch(err) { var entry3 = "";}
+                  try {
+                    var entry4 = linkMaker(shortcut[shortList][3][0], shortcut[shortList][3][1]);
+                  } catch(err) { var entry4 = "";}
+                  try {
+                    var entry5 = linkMaker(shortcut[shortList][4][0], shortcut[shortList][4][1]);
+                  } catch(err) { var entry5 = "";}
+                  try {
+                    var entry6 = linkMaker(shortcut[shortList][5][0], shortcut[shortList][5][1]);
+                  } catch(err) { var entry6 = "";}
+
+                  processBash(entry1, entry2, entry3, entry4, entry5, entry6);
+                }
               }
             }
             else if (dataAr[0] == "test") {
@@ -115,6 +126,14 @@ function getTime() {
 
             document.getElementById("output6").innerHTML = dOut6;
 
+        }
+//<a href='example.com'>'example'</a>
+        function linkMaker(nameC, linkC) {
+          if (nameC != null && linkC != null) {
+            return "<a href="+linkC+">"+nameC+"</a>";
+          } else {
+            return "";
+          }
         }
 
 
