@@ -43,6 +43,10 @@ Then to add the ShortCut list itself find the variable `shortcut` in `config.js`
 Some things to keep in mind, the name of the list in `scList` and in `shortcut` have to match exactly, and will be what you have to type with `cat` to view the list.
 As well as currently these list only support six entries, but again hopefully that will change soon.
 
+### Change User name and Host name
+The UserName and HostName shown in the pictures as `[User@Chrome ~]$` can also be modified. <br>
+In `config.js` find the variables `userNameV` and `hostNameV` and change them to whatever you want!
+
 ### But what does it look like?
 [![Watch the video](results.PNG?raw=true)](
 https://youtu.be/DjoGSAESUW0)
