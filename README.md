@@ -7,7 +7,7 @@ A Terminal themed Startpage.
 The Startpage will always show the date and time at the top, as well as a list of favourite links.
 
 But from there, you have a sudo-terminal that allows some basic commands, bringing the ability to search the web, show other lists of ShortCuts, and a few other actions.
-All available commands are listed here.
+All available commands are listed <a href="https://github.com/confused-Techie/TermPage/wiki/Commands">here</a>.
 If you would like to see a short video showing the use click <a href="https://www.youtube.com/embed/DjoGSAESUW0">here</a>.
 
 ### How to set up a local file startpage
@@ -42,3 +42,8 @@ Then to add the ShortCut list itself find the variable `shortcut` in `config.js`
   
 Some things to keep in mind, the name of the list in `scList` and in `shortcut` have to match exactly, and will be what you have to type with `cat` to view the list.
 As well as currently these list only support six entries, but again hopefully that will change soon.
+
+### But what does it look like?
+[![Watch the video](results.PNG?raw=true)](
+https://youtu.be/DjoGSAESUW0)
+Click the image to watch a video.
