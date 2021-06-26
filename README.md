@@ -19,9 +19,13 @@ Go into your preffered web browser and access the settings to change the homepag
 Then add your file like this: `file:///path/to/index.html`
 Or if you'd like, you can click on index.html after downloading and copy the link that shows at the top of your browser. And use that, rather than type it in manually.
 
+**Website**
+
+Also it is now possible to easily set up a Docker container for TermPage and you can learn more <a href="https://github.com/confused-Techie/TermPage-Docker">here.</a>
+
 ### Change the Favourites List
 To change your list of favourites that show up, go ahead and open the `config.js` in your preffered text editor (like Atom or Notepad).
-Then find the variable named `favourites` and modify it as needed. 
+Then find the variable named `favourites` and modify it as needed.
 Keep in mind you need to keep the format the same as it is currently, like so: <br>
 `var favourites = [ ["Name of Favourite", "https://Link-to-Favourite"], ["Name of Second Favourite", "https://Link-to-2nd-Favourite"], ....(And so on)` <br>
 Currently the list of favourites is locked at 6 items,but that should change soon.
@@ -39,7 +43,7 @@ If you would like you can also add a description for the list in `scListD`, but 
 Then to add the ShortCut list itself find the variable `shortcut` in `config.js` and modify it like so:<br>
 `const shortcut = {
   "new-shortcut-list" : [ ["Name of Link", "https://address-of-link"], ["Name of Link2", "https://address-of-link2"], .....(And so on)`<br>
-  
+
 Some things to keep in mind, the name of the list in `scList` and in `shortcut` have to match exactly, and will be what you have to type with `cat` to view the list.
 As well as currently these list only support six entries, but again hopefully that will change soon.
 
